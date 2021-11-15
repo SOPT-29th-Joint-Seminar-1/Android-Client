@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/home"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_membership"
+        android:icon="@drawable/icon_membership_inactive"
+        android:title="멤버십"/>
+
+    <item
+        android:id="@+id/menu_plus"
+        android:icon="@drawable/icon_plus"
+        android:title="세탁신청"/>
+
+    <item
+        android:id="@+id/menu_use"
+        android:icon="@drawable/icon_use_inactive"
+        android:title="이용내역"/>
+
+    <item
+        android:id="@+id/menu_mypage"
+        android:icon="@drawable/icon_mypage_inactive"
+        android:title="마이세특"/>
+
+</menu>
