@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HapdongSeminar29th">
         <activity
-            android:name=".View.MainActivity"
+            android:name=".View_Factory.SmartFactoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".View_Review.ReviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Event.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
