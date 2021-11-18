@@ -1,169 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_title_home"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="26dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="오늘 신청하면\n월요일 새벽 배송"
-                android:textSize="24sp"/>
+        <TextView
+            android:id="@+id/tv_title_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="오늘 신청하면\n월요일 새벽 배송"
+            android:textColor="@color/black"
+            android:textFontWeight="700"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/question_mark"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="@id/tv_title_home"
             android:layout_marginStart="158dp"
-            app:layout_constraintTop_toTopOf="@id/tv_title_home"/>
-
+            android:layout_marginTop="24dp"
+            android:src="@drawable/question_mark"
+            app:layout_constraintStart_toStartOf="@id/tv_title_home"
+            app:layout_constraintTop_toTopOf="@id/tv_title_home" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_home_blue"
             android:layout_width="0dp"
             android:layout_height="64dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/rectangle_fill_blue"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_home"/>
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_home" />
 
 
         <TextView
             android:id="@+id/tv_home_blue1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="세탁특공대가 처음이세요?"
-            android:elevation="10dp"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/btn_home_blue"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="18dp"
-            app:layout_constraintStart_toStartOf="@id/btn_home_blue"/>
+            android:layout_marginTop="12dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세탁특공대가 처음이세요?"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/btn_home_blue"
+            app:layout_constraintTop_toTopOf="@id/btn_home_blue" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="세특을 한 번도 사용해보지 않은 분들을 위해"
-            android:elevation="10dp"
-            android:textSize="10sp"
-            app:layout_constraintTop_toTopOf="@id/btn_home_blue"
-            android:layout_marginTop="32dp"
             android:layout_marginStart="18dp"
-            app:layout_constraintStart_toStartOf="@id/btn_home_blue"/>
+            android:layout_marginTop="32dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세특을 한 번도 사용해보지 않은 분들을 위해"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/btn_home_blue"
+            app:layout_constraintTop_toTopOf="@id/btn_home_blue" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_home_darkgrey"
             android:layout_width="0dp"
             android:layout_height="64dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rectangle_fill_darkgrey"
-            app:layout_constraintTop_toBottomOf="@id/btn_home_blue"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_home_blue" />
 
         <TextView
             android:id="@+id/tv_home_darkgrey1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="지난번에도 사용하셨죠!"
-            android:elevation="10dp"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey"
-            android:layout_marginTop="13dp"
             android:layout_marginStart="18dp"
-            app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"/>
+            android:layout_marginTop="13dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="지난번에도 사용하셨죠!"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"
+            app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="꾸준히 세탁특공대를 이용하시는 분들을 위해"
-            android:elevation="10dp"
-            android:textSize="10sp"
-            app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey"
-            android:layout_marginTop="33dp"
             android:layout_marginStart="18dp"
-            app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"/>
+            android:layout_marginTop="33dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="꾸준히 세탁특공대를 이용하시는 분들을 위해"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"
+            app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey" />
 
-            <TextView
-                android:id="@+id/tv_event_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="세탁특공대, 세특의 이벤트"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_home_darkgrey"
-                android:layout_marginTop="33dp"/>
+        <TextView
+            android:id="@+id/tv_event_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세탁특공대, 세특의 이벤트"
+            android:textColor="@color/black"
+            android:textFontWeight="700"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_home_darkgrey" />'
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_home1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_event_home" />
+
+        <TextView
+            android:id="@+id/tv_review_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세특 고객들의 칭찬후기"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/vp_home1"
+            android:layout_marginTop="44dp"
+            android:textFontWeight="700"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_home2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="20dp"
+            app:layout_goneMarginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_review_home" />
+
 
         <TextView
             android:id="@+id/tv_find_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:text="세특발견"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="30dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_event_home"/>
-        
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세특발견"
+            android:textColor="@color/black"
+            android:textFontWeight="700"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vp_home2" />
+
+
         <ImageView
+            android:id="@+id/iv_home_computer"
             android:layout_width="0dp"
             android:layout_height="212dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_home"
-            android:src="@drawable/unsplash_hpjSkU2UYSU"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="25dp"
-            android:scaleType="centerCrop"/>
+            android:background="@drawable/round_corner"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_computer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_find_home" />
 
 
+        <TextView
+            android:id="@+id/tv_computer_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="35dp"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="2021 슈퍼채용 진행중 (~10/31)"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_home_computer"
+            app:layout_constraintStart_toStartOf="@id/iv_home_computer" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo"
+            android:text="세탁특공대 채용 이벤트"
+            android:textColor="#C9C9C9"
+            android:textFontWeight="400"
+            app:layout_constraintStart_toStartOf="@id/tv_computer_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_computer_1" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_computer" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </ScrollView>

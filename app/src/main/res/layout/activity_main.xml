@@ -15,21 +15,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/blue">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_appbar_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginVertical="7dp"
             android:textColor="@color/white"
             android:text="서울 마포구 양화로 183 822호"
-            android:layout_gravity="center"/>
-        
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/counselor_icon"
-            android:layout_gravity="right"
-            android:layout_marginEnd="13dp"/>
+            />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="7dp"
+                android:src="@drawable/main_bottom_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_appbar_address"
+                app:layout_constraintBottom_toBottomOf="@id/tv_appbar_address"
+                app:layout_constraintStart_toEndOf="@id/tv_appbar_address"
+                android:layout_marginStart="6dp"
+                />
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/counselor_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="13dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.fragment.app.FragmentContainerView
@@ -47,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:borderWidth="0dp"
+        app:fabCustomSize="39dp"
         android:id="@+id/flbtn_main"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="12dp"

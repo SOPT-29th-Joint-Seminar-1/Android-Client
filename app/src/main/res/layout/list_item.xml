@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_item"
+        android:layout_width="66dp"
+        android:layout_height="67dp"
+        android:layout_marginLeft="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="8dp">
+
+    <ImageView
+        android:id="@+id/homeImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_marginStart="9dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/cardview_item"
+        app:layout_constraintTop_toTopOf="@id/cardview_item"
+        android:text="세특이 처음이라면 무조건 반값!"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/homeExplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@id/homeTitle"
+        app:layout_constraintStart_toStartOf="@id/homeTitle"
+        android:text="신규회원 첫주문 이벤트"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

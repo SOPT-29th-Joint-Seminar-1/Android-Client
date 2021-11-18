@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
 
+        supportFragmentManager.beginTransaction().replace(R.id.container_main,HomeFragment())
+            .commitAllowingStateLoss()
+
         initBottomNavigation()
 
         setContentView(binding.root)

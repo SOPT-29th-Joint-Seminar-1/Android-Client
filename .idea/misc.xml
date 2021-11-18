@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.23072916666666668" />
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/main_item_list.xml" value="0.1" />
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/rectangle_fill_blue.xml" value="0.1" />
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/rectangle_fill_darkgrey.xml" value="0.1" />
-        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/drawable/round_corner.xml" value="0.1" />
+        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/font/spoqa_han_sans_neo.xml" value="0.1" />
+        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/layout/main_list_item.xml" value="0.264" />
         <entry key="..\:/Users/Hyeonji/Desktop/SOPT/Android-Client/app/src/main/res/menu/menu_main.xml" value="0.264" />
       </map>
     </option>
