@@ -1,4 +1,4 @@
-package org.sopt.hapdongseminar_29th.View
+package org.sopt.hapdongseminar_29th.Event
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
