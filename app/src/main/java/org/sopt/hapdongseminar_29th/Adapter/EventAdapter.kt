@@ -1,10 +1,10 @@
-package org.sopt.hapdongseminar_29th.View
+package org.sopt.hapdongseminar_29th.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class FragmentAdapter(fragmentActivity: FragmentActivity) :
+class EventAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
     val fragments = mutableListOf<Fragment>()
     override fun getItemCount(): Int = fragments.size
