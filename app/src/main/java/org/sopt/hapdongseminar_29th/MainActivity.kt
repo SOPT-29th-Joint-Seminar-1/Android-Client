@@ -11,15 +11,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
 
-        supportFragmentManager.beginTransaction().replace(R.id.container_main,HomeFragment())
-            .commitAllowingStateLoss()
-
         initBottomNavigation()
+        initFloatingBtn()
 
         setContentView(binding.root)
     }
 
     private fun initBottomNavigation(){
+
+        supportFragmentManager.beginTransaction().replace(R.id.container_main,HomeFragment())
+            .commitAllowingStateLoss()
+
         binding.bnvMain.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.menu_home -> {
@@ -32,4 +34,10 @@ class MainActivity : AppCompatActivity() {
                 false
             }
         }
+
+    private fun initFloatingBtn(){
+        binding.flbtnMain.setOnClickListener {
+            binding.scrollMain.scrollTo(0,0)
+        }
+    }
     }

@@ -1,5 +1,6 @@
 package org.sopt.hapdongseminar_29th
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.EventLog
 import androidx.fragment.app.Fragment
@@ -27,6 +28,16 @@ class HomeFragment : Fragment() {
         initRecyclerView()
 
         binding.ivHomeComputer.clipToOutline=true //TODO : 이렇게하면 round corner되는지? 안되면 카드뷰
+
+        binding.ivQuestion.setOnClickListener {
+            val intent= Intent(requireContext(),PopupActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        binding.btnHomeBlue.setOnClickListener {
+            startActivity(Intent(requireContext(), SecondActivity::class.java))
+        }
 
         return binding.root
     }

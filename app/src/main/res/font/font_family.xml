@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <font
+        android:font="@font/spoqa_han_sans_neo"
+        app:font="@font/spoqa_han_sans_neo"
+        android:fontStyle="normal"
+        android:fontWeight="400"/>
+
+    <font
+        android:font="@font/spoqa_han_sens_neo_bold"
+        app:font="@font/spoqa_han_sens_neo_bold"
+        android:fontWeight="700"
+        android:fontStyle="normal"/>
+
+
+</font-family>

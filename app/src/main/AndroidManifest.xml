@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HapdongSeminar29th">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PopupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

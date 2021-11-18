@@ -3,29 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_height="1500dp"
+    android:overScrollMode="never"
     tools:context=".HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_title_home"
+            android:lineSpacingExtra="1dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="오늘 신청하면\n월요일 새벽 배송"
             android:textColor="@color/black"
-            android:textFontWeight="700"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/iv_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="158dp"
@@ -54,10 +57,9 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="12dp"
             android:elevation="10dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세탁특공대가 처음이세요?"
+            android:textStyle="bold"
             android:textColor="@color/white"
-            android:textFontWeight="700"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@id/btn_home_blue"
             app:layout_constraintTop_toTopOf="@id/btn_home_blue" />
@@ -68,11 +70,10 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="32dp"
             android:elevation="10dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세특을 한 번도 사용해보지 않은 분들을 위해"
             android:textColor="@color/white"
-            android:textFontWeight="400"
             android:textSize="10sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@id/btn_home_blue"
             app:layout_constraintTop_toTopOf="@id/btn_home_blue" />
 
@@ -94,10 +95,9 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="13dp"
             android:elevation="10dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="지난번에도 사용하셨죠!"
             android:textColor="@color/white"
-            android:textFontWeight="700"
+            android:textStyle="bold"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"
             app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey" />
@@ -108,10 +108,9 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="33dp"
             android:elevation="10dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="꾸준히 세탁특공대를 이용하시는 분들을 위해"
             android:textColor="@color/white"
-            android:textFontWeight="400"
+            android:textStyle="normal"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="@id/btn_home_darkgrey"
             app:layout_constraintTop_toTopOf="@id/btn_home_darkgrey" />
@@ -122,13 +121,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세탁특공대, 세특의 이벤트"
             android:textColor="@color/black"
-            android:textFontWeight="700"
+            android:textStyle="bold"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_home_darkgrey" />'
+            app:layout_constraintTop_toBottomOf="@id/btn_home_darkgrey" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_home1"
@@ -144,14 +142,14 @@
             android:id="@+id/tv_review_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세특 고객들의 칭찬후기"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/vp_home1"
-            android:layout_marginTop="44dp"
-            android:textFontWeight="700"/>
+            android:layout_marginTop="44dp"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_home2"
@@ -171,11 +169,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="44dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세특발견"
             android:textColor="@color/black"
-            android:textFontWeight="700"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vp_home2" />
 
@@ -200,10 +197,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="35dp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="2021 슈퍼채용 진행중 (~10/31)"
             android:textColor="@color/white"
-            android:textFontWeight="700"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/iv_home_computer"
@@ -212,10 +207,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/spoqa_han_sans_neo"
             android:text="세탁특공대 채용 이벤트"
             android:textColor="#C9C9C9"
-            android:textFontWeight="400"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@id/tv_computer_1"
             app:layout_constraintTop_toBottomOf="@id/tv_computer_1" />
 
@@ -224,6 +218,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
+            android:paddingBottom="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_home_computer" />

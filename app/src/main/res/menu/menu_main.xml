@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/menu_plus"
-        android:icon="@drawable/icon_plus"
+
         android:title="세탁신청"/>
 
     <item
