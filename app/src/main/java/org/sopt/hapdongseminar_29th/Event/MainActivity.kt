@@ -57,9 +57,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    companion object {
-        const val FIRST_POSITION = 1
-        const val SECOND_POSITION = 2
-    }
 }
