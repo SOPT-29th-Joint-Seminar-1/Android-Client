@@ -2,7 +2,7 @@
 🌈 클 디 합 동 세 미 나 1 조 🌈
 
 **시연 영상**
-<p align="center"><img width="35%" src=""/></p>
+<p align="center"><img width="35%"  src="https://user-images.githubusercontent.com/48755814/142638871-1809f5e4-9bab-4c89-8b77-0fdf51d5a15b.gif"/></p>
 
 
 
