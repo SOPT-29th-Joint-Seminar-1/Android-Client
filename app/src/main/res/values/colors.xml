@@ -19,4 +19,7 @@
     <color name="blue4">#F1F5FF</color>
     <color name="red1">#D95B5B</color>
     <color name="red2">#FFF5F5</color>
+    <color name="gray2">#E9E9E9</color>
+    <color name="yellow">#FFEB60</color>
+    <color name="bluegray1">#f4f5f9</color>
 </resources>
