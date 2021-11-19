@@ -138,6 +138,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_event_home" />
 
+        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            android:id="@+id/dots_indicator_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dampingRatio="0.5"
+            app:dotsColor="@color/blue1"
+            android:layout_marginTop="15dp"
+            app:dotsCornerRadius="20dp"
+            app:dotsSize="9dp"
+            app:dotsSpacing="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vp_home1"
+            app:progressMode="true"
+            app:stiffness="300" />
+
         <TextView
             android:id="@+id/tv_review_home"
             android:layout_width="wrap_content"
@@ -162,6 +178,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_review_home" />
 
+        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            android:id="@+id/dots_indicator_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dampingRatio="0.5"
+            app:dotsColor="@color/yellow"
+            android:layout_marginTop="15dp"
+            app:dotsCornerRadius="20dp"
+            app:dotsSize="9dp"
+            app:dotsSpacing="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vp_home2"
+            app:progressMode="true"
+            app:stiffness="300" />
 
         <TextView
             android:id="@+id/tv_find_home"

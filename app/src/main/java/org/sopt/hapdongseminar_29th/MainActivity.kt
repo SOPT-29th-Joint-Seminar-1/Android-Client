@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
         initBottomNavigation()
         initFloatingBtn()
@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun initBottomNavigation(){
+    private fun initBottomNavigation() {
 
-        supportFragmentManager.beginTransaction().replace(R.id.container_main,HomeFragment())
+        supportFragmentManager.beginTransaction().replace(R.id.container_main, HomeFragment())
             .commitAllowingStateLoss()
 
         binding.bnvMain.setOnItemSelectedListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.menu_home -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container_main, HomeFragment())
@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
             } //TODO :다른 아이디 select 됐을때
-                false
-            }
+            false
         }
+    }
 
-    private fun initFloatingBtn(){
+    private fun initFloatingBtn() {
         binding.flbtnMain.setOnClickListener {
-            binding.scrollMain.scrollTo(0,0)
+            binding.scrollMain.scrollTo(0, 0)
         }
     }
-    }
+}
