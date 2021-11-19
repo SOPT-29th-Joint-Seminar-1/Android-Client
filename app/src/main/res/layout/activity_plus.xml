@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PlusActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_plus"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_appbar_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울 마포구 양화로 183 822호"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_plus_down"
+                app:layout_constraintBottom_toBottomOf="@id/tv_appbar_address"
+                app:layout_constraintStart_toEndOf="@id/tv_appbar_address"
+                app:layout_constraintTop_toTopOf="@id/tv_appbar_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_plus" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_plus"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_apply_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_divider">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fc_plus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RadioGroup
+        android:id="@+id/rg_scroll_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/cl_apply_btn"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_price"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/selector_plus_price_radio_btn"
+            android:button="@null"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb_use"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/selector_plus_use_radio_btn"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/rb_process"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@drawable/selector_plus_process_radio_btn"
+            android:button="@null" />
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_apply_btn"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/blue1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintEnd_toStartOf="@+id/tv_apply" />
+
+            <TextView
+                android:id="@+id/tv_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="세탁 신청하기"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

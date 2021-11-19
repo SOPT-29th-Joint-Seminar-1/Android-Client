@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
-import org.sopt.hapdongseminar_29th.Adapter.ReviewAdapter
+import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
 import org.sopt.hapdongseminar_29th.databinding.ActivityReviewBinding
 
 class ReviewActivity : AppCompatActivity() {

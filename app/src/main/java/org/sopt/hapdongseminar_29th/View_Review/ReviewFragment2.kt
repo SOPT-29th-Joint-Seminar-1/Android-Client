@@ -24,17 +24,17 @@ class ReviewFragment2 : Fragment() {
     }
 
     private fun onClick() {
-        binding.clRecommendView.setOnClickListener {
+        binding.llRecommend.setOnClickListener {
             var text = binding.tvRecommendCount.text.toString().toInt()
             if (!isClick) {
                 isClick = true
-                binding.clRecommendView.isSelected = isClick
+                binding.llRecommend.isSelected = isClick
                 text += 1
                 if (text > 99) binding.tvRecommendCount.text = "99+"
                 else binding.tvRecommendCount.text = text.toString()
             } else {
                 isClick = false
-                binding.clRecommendView.isSelected = isClick
+                binding.llRecommend.isSelected = isClick
                 text -= 1
                 binding.tvRecommendCount.text = text.toString()
             }

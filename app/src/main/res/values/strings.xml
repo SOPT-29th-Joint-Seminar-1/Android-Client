@@ -3,4 +3,23 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bottomTitle">리뷰가 도움이 됐나요?</string>
+    <string name="plus_caution">
+        - 천연가죽 및 모피, 카페트의 경우 전문가와 제휴를 통해 세탁이 진행되기 때문에\n
+평균 세탁기간이 2주정도 소요되고 있습니다. 꼭 넉넉하게 시간을 두고 맡겨주세요.\n\n
+
+- 건조시간 등의 사유로 세탁기간이 더 필요한 품목이 발생할 수 있습니다.\n
+이 경우 사전 알림을 보내드린 후 다음날 따로 배송되오니 걱정마세요.\n\n
+
+- 맡기기 전 악세사리 는 제거하고 주머니 속 소지품도 꼭 점검해주세요.\n
+이 외에도 더 궁금하신 사항 있으시면 [마이세특]-[고객센터]를 통해 문의해주세요. \n친절히 답변 드릴게요.\n\n
+
+- 고객센터 운영시간\n
+월-일 08:00~24:00 (점심시간 12:00~13:00)\n
+    </string>
+    <string name="plus_greeting">미뇽님 반가워요!\n세탁특공대가 처음이세요?</string>
+    <string name="plus_use_guide">오늘 밤 자정까지 주문하면\n이튿날 아침 7시 전까지 문 앞으로 배송받을 수 있어요.</string>
+    <string name="plus_step1">홈 화면 하단 메뉴에서 [세탁신청] 버튼을 눌러주세요.</string>
+    <string name="plus_step2">세탁물 수거는 0시부터 시작되니 그 전까지 문 앞에 두세요. 어디든 편한 곳에 담아주시고 에코백, 타포린백 등의 다회용 가방의 경우, 배송 시 돌려드려요.</string>
+    <string name="plus_step3">수거 당일 오후 4시, 세탁물 내역이 담긴 인수증을 보내드리니 내가 맡긴 세탁물과 요금을 확인 후, 원하는 방식으로 결제해주세요.</string>
+    <string name="plus_step4">완료된 세탁물은 오전 7시 전, 문 앞에 배송합니다. 간혹 세탁물의 양이 많은 경우 문 앞에 놓아 드리나 밀봉되어 있으니 걱정마세요.</string>
 </resources>

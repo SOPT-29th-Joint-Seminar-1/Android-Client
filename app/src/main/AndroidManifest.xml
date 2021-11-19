@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HapdongSeminar29th">
         <activity
-            android:name=".View_Factory.SmartFactoryActivity"
-            android:exported="true" />
+            android:name=".view.PlusActivity"
+            android:exported="false" />
         <activity
-            android:name=".View_Review.ReviewActivity"
-            android:exported="true" />
+            android:name=".SecondActivity"
+            android:exported="false" />
         <activity
-            android:name=".Event.MainActivity"
+            android:name=".PopupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

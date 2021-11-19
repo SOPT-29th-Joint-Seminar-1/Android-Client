@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".View_Factory.SmartFactoryFragment1">
 
     <ImageView
@@ -15,5 +16,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_detail_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="세탁특공대의 세탁과정\n 더 자세히 알아보세요!"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="@font/spoqa_han_sens_neo_bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_smartFactory4"
+        app:layout_constraintEnd_toEndOf="@id/iv_smartFactory4"
+        app:layout_constraintStart_toStartOf="@id/iv_smartFactory4"
+        app:layout_constraintTop_toTopOf="@id/iv_smartFactory4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_detail_more"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/detail_more"
+        android:fontFamily="@font/spoqa_han_sans_neo"
+        android:text="자세히 알아보기"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/iv_smartFactory4"
+        app:layout_constraintStart_toStartOf="@id/iv_smartFactory4"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_more" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
