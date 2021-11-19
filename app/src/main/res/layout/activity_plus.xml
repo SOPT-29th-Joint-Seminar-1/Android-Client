@@ -49,6 +49,15 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_plus" />
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/sv_plus"
         android:layout_width="match_parent"
@@ -56,7 +65,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cl_apply_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_plus">
+        app:layout_constraintTop_toBottomOf="@+id/v_divider">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fc_plus"
@@ -135,11 +144,11 @@
                 android:layout_height="wrap_content"
                 android:text="세탁 신청하기"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

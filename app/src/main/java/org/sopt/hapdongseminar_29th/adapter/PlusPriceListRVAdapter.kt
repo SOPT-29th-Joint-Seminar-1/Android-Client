@@ -1,4 +1,4 @@
-package org.sopt.hapdongseminar_29th.Adapter
+package org.sopt.hapdongseminar_29th.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

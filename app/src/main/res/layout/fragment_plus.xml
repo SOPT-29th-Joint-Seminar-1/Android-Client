@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:text="미뇽님 반가워요!\n세탁특공대가 처음이세요?"
+        android:text="@string/plus_greeting"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -63,6 +63,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="14sp"
             android:background="@android:color/transparent"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -96,7 +99,7 @@
 
         <RadioGroup
             android:id="@+id/rg_filter_label"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -204,9 +207,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/white"
+        android:background="@drawable/bg_price_list"
         android:scrollbarThumbVertical="@color/blue3"
         android:scrollbars="vertical"
+        android:scrollbarSize="6dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -241,9 +245,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:text="오늘 밤 자정까지 주문하면\n이튿날 아침 7시 전까지 문 앞으로 배송받을 수 있어요."
+        android:text="@string/plus_use_guide"
         android:textColor="@color/darkgrey1"
         android:textSize="11sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_use_title" />
 
@@ -284,9 +289,10 @@
         android:layout_width="0dp"
         android:layout_height="91dp"
         android:layout_marginTop="12dp"
-        android:text="홈 화면 하단 메뉴에서 [세탁신청] 버튼을 눌러주세요."
+        android:text="@string/plus_step1"
         android:textColor="@color/black"
         android:textSize="11sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@id/iv_step1_image"
         app:layout_constraintStart_toStartOf="@id/iv_step1_image"
         app:layout_constraintTop_toBottomOf="@id/iv_step1_image" />
@@ -328,9 +334,10 @@
         android:layout_width="0dp"
         android:layout_height="91dp"
         android:layout_marginTop="12dp"
-        android:text="세탁물 수거는 0시부터 시작되니 그 전까지 문 앞에 두세요. 어디든 편한 곳에 담아주시고 에코백, 타포린백 등의 다회용 가방의 경우, 배송 시 돌려드려요."
+        android:text="@string/plus_step2"
         android:textColor="@color/black"
         android:textSize="11sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@id/iv_step2_image"
         app:layout_constraintStart_toStartOf="@id/iv_step2_image"
         app:layout_constraintTop_toBottomOf="@id/iv_step2_image" />
@@ -372,9 +379,10 @@
         android:layout_width="0dp"
         android:layout_height="91dp"
         android:layout_marginTop="12dp"
-        android:text="수거 당일 오후 4시, 세탁물 내역이 담긴 인수증을 보내드리니 내가 맡긴 세탁물과 요금을 확인 후, 원하는 방식으로 결제해주세요."
+        android:text="@string/plus_step3"
         android:textColor="@color/black"
         android:textSize="11sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@id/iv_step3_image"
         app:layout_constraintStart_toStartOf="@id/iv_step3_image"
         app:layout_constraintTop_toBottomOf="@id/iv_step3_image" />
@@ -417,9 +425,10 @@
         android:layout_width="0dp"
         android:layout_height="91dp"
         android:layout_marginTop="12dp"
-        android:text="완료된 세탁물은 오전 7시 전, 문 앞에 배송합니다. 간혹 세탁물의 양이 많은 경우 문 앞에 놓아 드리나 밀봉되어 있으니 걱정마세요."
+        android:text="@string/plus_step4"
         android:textColor="@color/black"
         android:textSize="11sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@id/iv_step4_image"
         app:layout_constraintStart_toStartOf="@id/iv_step4_image"
         app:layout_constraintTop_toBottomOf="@id/iv_step4_image" />
@@ -521,7 +530,7 @@
         android:layout_marginTop="17dp"
         android:layout_marginBottom="41dp"
 
-        app:dotsColor="@color/gray2"
+        app:dotsColor="@color/grey2"
         app:selectedDotColor="@color/blue1"
         app:dotsCornerRadius="30dp"
         app:dotsSize="9dp"

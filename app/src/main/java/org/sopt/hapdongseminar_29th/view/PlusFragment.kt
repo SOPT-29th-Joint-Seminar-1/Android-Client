@@ -1,5 +1,6 @@
 package org.sopt.hapdongseminar_29th.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,14 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.sopt.hapdongseminar_29th.Adapter.SmartFactoryAdapter
 import org.sopt.hapdongseminar_29th.Product
 import org.sopt.hapdongseminar_29th.R
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment1
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment2
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment3
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment4
-import org.sopt.hapdongseminar_29th.Adapter.PlusPriceListRVAdapter
+import org.sopt.hapdongseminar_29th.adapter.PlusPriceListRVAdapter
+import org.sopt.hapdongseminar_29th.adapter.SmartFactoryAdapter
 import org.sopt.hapdongseminar_29th.databinding.FragmentPlusBinding
 
 class PlusFragment : Fragment() {
@@ -33,9 +34,9 @@ class PlusFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentPlusBinding.inflate(inflater, container, false)
+
         init()
-        val swipe = AutoSwipe()
-        swipe.start()
+
         return binding.root
     }
 
@@ -43,10 +44,20 @@ class PlusFragment : Fragment() {
         binding.etSearch.setOnFocusChangeListener { view, b ->
             binding.ivSearchBtn.setImageResource(R.drawable.ic_plus_search_focused)
         }
-        initAdapter()
+
         initBtn()
+        initRV()
+        initAdapter()
         initProcessAdapter()
 
+        val swipe = AutoSwipe()
+        swipe.start()
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun initRV() {
+        val customDecoration = VerticalItemDecoration(1f,1f,1, R.color.blue5)
+        binding.rvPriceList.addItemDecoration(customDecoration)
     }
 
     private fun initAdapter() {
@@ -62,7 +73,22 @@ class PlusFragment : Fragment() {
                 Product("바지, 스커트", 6000),
                 Product("원피스, 점프수트", 6000),
                 Product("스키/보드바지, 패딩바지", 10900),
-                Product("인조가죽 하의", 10900)
+                Product("인조가죽 하의", 10900),
+                Product("정장자켓, 교복자켓", 4000),
+                Product("조끼", 2000),
+                Product("자켓, 점퍼", 6000),
+                Product("코트, 트렌치코트", 12000),
+                Product("대형러그", 30000),
+                Product("커튼", 15000),
+                Product("대형커튼", 30000),
+                Product("발매트", 3000),
+                Product("쇼파커버", 8000),
+                Product("애견쿠션", 25000),
+                Product("애견의류", 7000),
+                Product("무릎담요", 5000),
+                Product("인형", 7000),
+                Product("대형인형", 20000),
+                Product("앞치", 4000)
             )
         )
         binding.rvPriceList.adapter = plusPriceListRVAdapter

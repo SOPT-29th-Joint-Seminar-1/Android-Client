@@ -11,7 +11,7 @@
         android:theme="@style/Theme.HapdongSeminar29th">
         <activity
             android:name=".view.PlusActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".SecondActivity"
             android:exported="false" />
