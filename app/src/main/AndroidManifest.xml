@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HapdongSeminar29th">
         <activity
+            android:name=".view.PlusActivity"
+            android:exported="true" />
+        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
@@ -25,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
