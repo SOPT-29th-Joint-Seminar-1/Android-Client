@@ -1,16 +1,18 @@
-package org.sopt.hapdongseminar_29th.adapter
+package org.sopt.hapdongseminar_29th.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.sopt.hapdongseminar_29th.Product
 import org.sopt.hapdongseminar_29th.databinding.ItemPlusPriceListBinding
 
 class PlusPriceListRVAdapter : RecyclerView.Adapter<PlusPriceListRVAdapter.PlusPriceListViewHolder>() {
-    val priceList = mutableListOf<String>()
+    val priceList = mutableListOf<Product>()
 
     class PlusPriceListViewHolder (private val binding : ItemPlusPriceListBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(data: String) {
-//            binding.tvFilterName.text = data
+        fun onBind(data: Product) {
+            binding.tvProductName.text = data.name
+            binding.tvProductPrice.text = "${data.price.toString()}원"
         }
     }
 

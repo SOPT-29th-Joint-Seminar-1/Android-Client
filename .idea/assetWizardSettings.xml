@@ -11,26 +11,11 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
-                        <option name="children">
-                          <map>
-                            <entry key="clipartAsset">
-                              <value>
-                                <PersistentState>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/keyboard_arrow_up/baseline_keyboard_arrow_up_24.xml" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_counselor_icon" />
-                            <entry key="sourceFile" value="C:\Users\Hyeonji\Desktop\SOPT\counselor_icon.svg" />
+                            <entry key="outputName" value="ic_plus_search_focused" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/app/src/main/res/drawable/icon_search.svg" />
                           </map>
                         </option>
                       </PersistentState>

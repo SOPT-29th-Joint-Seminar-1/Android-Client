@@ -49,7 +49,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/sv_plus"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <RadioGroup
         android:id="@+id/rg_scroll_btn"
