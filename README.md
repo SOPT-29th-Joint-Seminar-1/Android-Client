@@ -2,7 +2,9 @@
 🌈 클 디 합 동 세 미 나 1 조 🌈
 
 **시연 영상**
-https://user-images.githubusercontent.com/58066704/142635904-eed7daec-a256-4e2a-9dd5-113829457ffb.mp4
+<p align="center"><img width="35%" src=""/></p>
+
+
 
 **1) Git Branch 전략**   
   + View 별로 브랜치를 작업해서 Github에 올린다. (수정될수도,,)
