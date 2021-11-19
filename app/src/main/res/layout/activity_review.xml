@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Event.MainActivity">
+    tools:context=".View_Review.ReviewActivity">
 
     <TextView
         android:id="@+id/tv_text"
@@ -18,9 +18,10 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2_page"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:background="@color/bluegray1"
         android:layout_marginBottom="40dp"
         android:clipChildren="false"
         android:clipToPadding="false"
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:dampingRatio="0.5"
-        app:dotsColor="@color/blue1"
+        app:dotsColor="@color/yellow"
         app:dotsCornerRadius="20dp"
         app:dotsSize="16dp"
         app:dotsSpacing="6dp"
@@ -43,5 +44,6 @@
         app:layout_constraintTop_toBottomOf="@id/vp2_page"
         app:progressMode="true"
         app:stiffness="300" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
