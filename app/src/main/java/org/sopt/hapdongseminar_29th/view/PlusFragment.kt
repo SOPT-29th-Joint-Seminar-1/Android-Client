@@ -125,7 +125,7 @@ class PlusFragment : Fragment() {
                 binding.tvTestContent.visibility = View.VISIBLE
                 binding.ivCautionDown.setImageResource(R.drawable.ic_icon_arrow_up)
             } else {
-                binding.tvTestContent.visibility = View.INVISIBLE
+                binding.tvTestContent.visibility = View.GONE
                 binding.ivCautionDown.setImageResource(R.drawable.ic_icon_down_red)
             }
         }
