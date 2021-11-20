@@ -22,7 +22,7 @@ import org.sopt.hapdongseminar_29th.databinding.FragmentPlusBinding
 class PlusFragment : Fragment() {
     private lateinit var smartFactoryAdapter: SmartFactoryAdapter
     private lateinit var plusPriceListRVAdapter: PlusPriceListRVAdapter
-
+    private lateinit var thread: AutoSwipe
     private var pagerHandler = Handler(Looper.getMainLooper())
     private var fragmentList = listOf<Fragment>()
 
@@ -50,13 +50,13 @@ class PlusFragment : Fragment() {
         initAdapter()
         initProcessAdapter()
 
-        val swipe = AutoSwipe()
-        swipe.start()
+        thread = AutoSwipe()
+        thread.start()
     }
 
     @SuppressLint("ResourceAsColor")
     private fun initRV() {
-        val customDecoration = VerticalItemDecoration(1f,1f,1, R.color.blue5)
+        val customDecoration = VerticalItemDecoration(1f, 1f, 1, R.color.blue5)
         binding.rvPriceList.addItemDecoration(customDecoration)
     }
 
@@ -93,6 +93,7 @@ class PlusFragment : Fragment() {
         )
         binding.rvPriceList.adapter = plusPriceListRVAdapter
     }
+
     private fun initProcessAdapter() {
         fragmentList = listOf(
             SmartFactoryFragment1(),
@@ -117,6 +118,7 @@ class PlusFragment : Fragment() {
         viewPager.setPadding(0, 0, margin, 0)
         dotsIndicator.setViewPager2(viewPager)
     }
+
     private fun initBtn() {
         binding.tvTest.setOnClickListener {
             cautionPressed = !cautionPressed
@@ -150,7 +152,13 @@ class PlusFragment : Fragment() {
                 }
             } catch (e: InterruptedException) {
                 Log.d("interrupt", "쓰레드 종료")
+                e.printStackTrace()
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        thread.interrupt()
     }
 }
