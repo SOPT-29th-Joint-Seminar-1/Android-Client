@@ -6,11 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
-import org.sopt.hapdongseminar_29th.Adapter.ReviewAdapter
-import org.sopt.hapdongseminar_29th.Adapter.SmartFactoryAdapter
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment1
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment2
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment3
+import org.sopt.hapdongseminar_29th.adapter.SmartFactoryAdapter
 import org.sopt.hapdongseminar_29th.databinding.ActivitySmartFactoryBinding
 
 class SmartFactoryActivity : AppCompatActivity() {

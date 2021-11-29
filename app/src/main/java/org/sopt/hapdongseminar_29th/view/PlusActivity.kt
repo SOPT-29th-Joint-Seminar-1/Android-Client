@@ -53,7 +53,7 @@ class PlusActivity : AppCompatActivity() {
         }
 
         binding.rbProcess.setOnClickListener {
-            binding.svPlus.scrollTo(0,2000)
+            binding.svPlus.scrollTo(0,4000)
         }
 
     }

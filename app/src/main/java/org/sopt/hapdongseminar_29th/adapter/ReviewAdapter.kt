@@ -1,4 +1,4 @@
-package org.sopt.hapdongseminar_29th.Adapter
+package org.sopt.hapdongseminar_29th.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

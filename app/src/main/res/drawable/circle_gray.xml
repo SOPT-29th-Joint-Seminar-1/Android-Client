@@ -5,5 +5,5 @@
     >
     <corners
         android:radius="30dp"/>
-    <solid android:color="@color/gray2"/>
+    <solid android:color="@color/grey2"/>
 </shape>

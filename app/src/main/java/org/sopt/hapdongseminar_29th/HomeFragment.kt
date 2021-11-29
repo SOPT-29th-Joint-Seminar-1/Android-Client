@@ -4,15 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.EventLog
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.sopt.hapdongseminar_29th.Adapter.EventAdapter
-import org.sopt.hapdongseminar_29th.Adapter.ReviewAdapter
+import org.sopt.hapdongseminar_29th.adapter.EventAdapter
+import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
 import org.sopt.hapdongseminar_29th.Event.MainEvent1
 import org.sopt.hapdongseminar_29th.Event.MainEvent2
 import org.sopt.hapdongseminar_29th.Event.MainEvent3
