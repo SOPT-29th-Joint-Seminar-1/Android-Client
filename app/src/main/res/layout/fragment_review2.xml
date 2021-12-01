@@ -82,32 +82,56 @@
         app:layout_constraintStart_toStartOf="@id/tv_text2"
         app:layout_constraintTop_toBottomOf="@id/tv_text2" />
 
-    <ImageView
-        android:id="@+id/iv_bluestars1"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
-        app:layout_constraintBottom_toBottomOf="@id/tv_text1"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:id="@+id/rb_pickupStar"
+        android:theme="@style/review_color"
         app:layout_constraintStart_toEndOf="@+id/tv_text1"
-        app:layout_constraintTop_toTopOf="@id/tv_text1" />
+        app:layout_constraintTop_toTopOf="@id/tv_text1"
+        app:layout_constraintBottom_toBottomOf="@id/tv_text1"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:scaleY="0.7"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:stepSize="0.1"
+        />
 
-    <ImageView
-        android:id="@+id/iv_bluestars2"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
-        app:layout_constraintBottom_toBottomOf="@id/tv_text2"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:id="@+id/rb_deliveryStar"
+        android:theme="@style/review_color"
         app:layout_constraintStart_toEndOf="@+id/tv_text2"
-        app:layout_constraintTop_toTopOf="@id/tv_text2" />
+        app:layout_constraintTop_toTopOf="@id/tv_text2"
+        app:layout_constraintBottom_toBottomOf="@id/tv_text2"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:scaleY="0.7"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:stepSize="0.1"
+        />
 
-    <ImageView
-        android:id="@+id/iv_bluestars3"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
-        app:layout_constraintBottom_toBottomOf="@id/tv_text3"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:id="@+id/rb_laundryStar"
+        android:theme="@style/review_color"
         app:layout_constraintStart_toEndOf="@+id/tv_text3"
-        app:layout_constraintTop_toTopOf="@id/tv_text3" />
+        app:layout_constraintTop_toTopOf="@id/tv_text3"
+        app:layout_constraintBottom_toBottomOf="@id/tv_text3"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:scaleY="0.7"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:stepSize="0.1"
+        />
 
     <TextView
         android:id="@+id/tv_comment"
@@ -134,48 +158,37 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll_recommend"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:background="@drawable/recommend_frame"
-        android:padding="6dp"
+        android:gravity="center"
+        android:layout_marginStart="40dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintStart_toEndOf="@id/tv_bottomTitle"
         app:layout_constraintBottom_toBottomOf="@id/tv_bottomTitle"
+        app:layout_constraintTop_toTopOf="@id/tv_bottomTitle"
         app:layout_constraintEnd_toEndOf="@id/tv_cleanCount">
 
         <ImageView
             android:id="@+id/iv_DdaBong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:src="@drawable/recommend_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:src="@drawable/recommend_button" />
 
         <TextView
             android:id="@+id/tv_recommendCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
             android:fontFamily="@font/spoqa_han_sans_neo"
-            android:layout_marginEnd="5dp"
-            android:text="1"
+            tools:text="99+"
             android:textColor="@color/recommend_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
-            app:layout_constraintTop_toTopOf="@id/iv_DdaBong" />
-
-        <TextView
-            android:id="@+id/tv_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textColor="@color/recommend_color"
-            android:textSize="12sp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_recommendCount" />
+            android:textSize="12sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
