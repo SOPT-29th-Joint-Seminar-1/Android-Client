@@ -12,6 +12,7 @@ import org.sopt.hapdongseminar_29th.databinding.ActivitySmartFactoryBinding
 class SmartFactoryActivity : AppCompatActivity() {
     private var fragmentList = listOf<Fragment>()
     private lateinit var binding: ActivitySmartFactoryBinding
+    private lateinit var thread: AutoSwipe
     private lateinit var smartFactoryAdatper: SmartFactoryAdapter
     private var pagerHandler = Handler(Looper.getMainLooper())
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +60,7 @@ class SmartFactoryActivity : AppCompatActivity() {
                         if (position == fragmentList.size - 1) {
                             position = 0
                             binding.vp2Page.currentItem = position
-                        }else {
+                        } else {
                             position++
                             binding.vp2Page.currentItem = position
                         }
@@ -69,5 +70,10 @@ class SmartFactoryActivity : AppCompatActivity() {
                 Log.d("interrupt", "쓰레드 종료")
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        thread.interrupt()
     }
 }

@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     private var fragmentEventList = listOf<Fragment>()
     private var fragmentReviewList = listOf<Fragment>()
     private var pagerHandler = Handler(Looper.getMainLooper())
-
+    private lateinit var thread: AutoSwipe
     private lateinit var eventAdapter: EventAdapter
     private lateinit var reviewAdapter: ReviewAdapter
 
@@ -124,7 +124,7 @@ class HomeFragment : Fragment() {
                         if (position2 == fragmentReviewList.size - 1) {
                             position2 = 0
                             binding.vpHome2.currentItem = position2
-                        }else{
+                        } else {
                             position2++
                             binding.vpHome2.currentItem = position
                         }
@@ -138,6 +138,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        thread.interrupt()
         _binding = null
     }
 

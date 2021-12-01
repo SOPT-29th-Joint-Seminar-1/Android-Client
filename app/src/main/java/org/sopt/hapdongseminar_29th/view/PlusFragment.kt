@@ -138,7 +138,7 @@ class PlusFragment : Fragment() {
         override fun run() {
             try {
                 while (true) {
-                    sleep(2000)
+                    sleep(4000)
                     pagerHandler.post {
                         var position = binding.vp2ProcessPage.currentItem
                         if (position == fragmentList.size - 1) {
