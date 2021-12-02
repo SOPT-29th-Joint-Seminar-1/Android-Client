@@ -40,11 +40,11 @@ class ReviewFragment1 : Fragment() {
             if (!isClick) {
                 isClick = true
                 binding.llRecommend.isSelected = isClick
-                likecount.plus(1)
+                likecount += 1
             } else {
                 isClick = false
                 binding.llRecommend.isSelected = isClick
-                likecount.minus(1)
+                likecount -= 1
             }
         }
         return likecount
@@ -59,23 +59,31 @@ class ReviewFragment1 : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data?.get(0)
-                    val beforeCount: String = data?.likecount.toString()
+                    var likeCount: Int = data?.likecount!!
                     binding.tvTitle.text = data?.name.toString()
                     binding.tvComment.text = data?.content
 
-                    binding.rbPickupStar.rating = data?.pickupStar?.toFloat()!!
+                    binding.rbPickupStar.rating = data.pickupStar.toFloat()
                     binding.rbDeliveryStar.rating = data.deliveryStar.toFloat()
                     binding.rbLaundryStar.rating = data.laundryStar.toFloat()
 
                     binding.tvCleanCount.text = "세특 ${data?.usingcount}회차"
 
-                    var afterCount: String = onClick(beforeCount).toString()
-                    Toast.makeText(requireActivity(), beforeCount, Toast.LENGTH_SHORT).show()
-                    if (afterCount.toInt() < 99)
-                        afterCount = data.likecount.toString()
+                    binding.llRecommend.setOnClickListener {
+                        if (!isClick) {
+                            isClick = true
+                            binding.llRecommend.isSelected = isClick
+                            likeCount += 1
+                        } else {
+                            isClick = false
+                            binding.llRecommend.isSelected = isClick
+                            likeCount -= 1
+                        }
+                    }
+                    if (likeCount < 99)
+                        binding.tvRecommendCount.text = likeCount.toString()
                     else
-                        afterCount = "99+"
-                    binding.tvRecommendCount.text = afterCount
+                        binding.tvRecommendCount.text = "99+"
                 } else {
                     Toast.makeText(activity, "error", Toast.LENGTH_SHORT).show()
                 }

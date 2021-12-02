@@ -4,7 +4,6 @@ data class ResponseReviewGetData(
     val status: Int,
     val success: Boolean,
     val data: List<Data>
-
 ) {
     data class Data(
         val id: String,

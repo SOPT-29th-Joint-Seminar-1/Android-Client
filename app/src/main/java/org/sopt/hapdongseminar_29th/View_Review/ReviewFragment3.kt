@@ -32,21 +32,20 @@ class ReviewFragment3 : Fragment() {
     }
 
     //좋아요 리뷰수 가져오기
-    private fun onClick(count: String): String {
+    private fun onClick(count: String): Int {
         var likecount: Int = count.toInt()
         binding.llRecommend.setOnClickListener {
             if (!isClick) {
                 isClick = true
                 binding.llRecommend.isSelected = isClick
-                likecount.plus(1)
-
+                likecount += 1
             } else {
                 isClick = false
                 binding.llRecommend.isSelected = isClick
-                likecount.minus(1)
+                likecount -= 1
             }
         }
-        return likecount.toString()
+        return likecount
     }
 
     private fun getValues() {

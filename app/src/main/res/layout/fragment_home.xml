@@ -142,7 +142,6 @@
             android:id="@+id/dots_indicator_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             app:dotsColor="@color/grey2"
             app:selectedDotColor="@color/blue1"
             android:layout_marginTop="15dp"

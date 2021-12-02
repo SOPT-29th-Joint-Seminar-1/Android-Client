@@ -15,15 +15,17 @@ import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
 import org.sopt.hapdongseminar_29th.Event.MainEvent1
 import org.sopt.hapdongseminar_29th.Event.MainEvent2
 import org.sopt.hapdongseminar_29th.Event.MainEvent3
+import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment
 import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment1
 import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment2
 import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment3
+import org.sopt.hapdongseminar_29th.data.ResponseReviewGetData
 import org.sopt.hapdongseminar_29th.databinding.FragmentHomeBinding
 import org.sopt.hapdongseminar_29th.view.PlusActivity
 
 class HomeFragment : Fragment() {
     private var fragmentEventList = listOf<Fragment>()
-    private var fragmentReviewList = listOf<Fragment>()
+    private var fragmentReviewList = listOf<ResponseReviewGetData.Data>()
     private var pagerHandler = Handler(Looper.getMainLooper())
     private lateinit var thread: AutoSwipe
     private lateinit var eventAdapter: EventAdapter
@@ -86,13 +88,14 @@ class HomeFragment : Fragment() {
 
     private fun initAdapter() {
         fragmentEventList = listOf(MainEvent1(), MainEvent2(), MainEvent3())
-        fragmentReviewList = listOf(ReviewFragment1(), ReviewFragment2(), ReviewFragment3())
+//        fragmentReviewList = listOf(ReviewFragment1(), ReviewFragment2(), ReviewFragment3())
 
         eventAdapter = EventAdapter(requireActivity())
         eventAdapter.fragments.addAll(fragmentEventList)
 
-        reviewAdapter = ReviewAdapter(requireActivity())
-        reviewAdapter.fragments.addAll(fragmentReviewList)
+        reviewAdapter = ReviewAdapter()
+        reviewAdapter.reviewList = fragmentReviewList
+//        reviewAdapter.reviewList.addAll(fragmentReviewList)
 
         val dotsIndicatorEvent = binding.dotsIndicatorEvent
         val vpHome1 = binding.vpHome1
