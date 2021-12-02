@@ -1,6 +1,10 @@
 # Android-Client
 🌈 클 디 합 동 세 미 나 1 조 🌈
 
+**시연 영상**
+<p align="center"><img width="35%"  src="https://user-images.githubusercontent.com/48755814/142638871-1809f5e4-9bab-4c89-8b77-0fdf51d5a15b.gif"/></p>
+
+
 
 **1) Git Branch 전략**   
   + View 별로 브랜치를 작업해서 Github에 올린다. (수정될수도,,)
@@ -38,6 +42,3 @@
 : 자료형_이름   
 + 예시: btn_sample (헝가리안 표기법 사용)   
 + 이외의 변수는 카멜표기법 사용
-
-
- 

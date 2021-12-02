@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -32,8 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
-        android:text="깨끗한사과"
         android:fontFamily="@font/spoqa_han_sens_neo_bold"
+        android:text="깨끗한사과"
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/iv_reviewImg1"
@@ -43,8 +44,8 @@
         android:id="@+id/tv_cleanCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/spoqa_han_sans_neo"
         android:layout_marginRight="14dp"
+        android:fontFamily="@font/spoqa_han_sans_neo"
         android:text="세특 15회차"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_title" />
@@ -64,8 +65,8 @@
         android:id="@+id/tv_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/spoqa_han_sans_neo"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/spoqa_han_sans_neo"
         android:text="배송"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@id/tv_text1"
@@ -82,29 +83,50 @@
         app:layout_constraintStart_toStartOf="@id/tv_text2"
         app:layout_constraintTop_toBottomOf="@id/tv_text2" />
 
-    <ImageView
-        android:id="@+id/iv_bluestars1"
+    <RatingBar
+        android:id="@+id/rb_pickupStar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:stepSize="0.1"
+        android:theme="@style/review_color"
         app:layout_constraintBottom_toBottomOf="@id/tv_text1"
         app:layout_constraintStart_toEndOf="@+id/tv_text1"
         app:layout_constraintTop_toTopOf="@id/tv_text1" />
 
-    <ImageView
-        android:id="@+id/iv_bluestars2"
+    <RatingBar
+        android:id="@+id/rb_deliveryStar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:stepSize="0.1"
+        android:theme="@style/review_color"
         app:layout_constraintBottom_toBottomOf="@id/tv_text2"
         app:layout_constraintStart_toEndOf="@+id/tv_text2"
         app:layout_constraintTop_toTopOf="@id/tv_text2" />
 
-    <ImageView
-        android:id="@+id/iv_bluestars3"
+    <RatingBar
+        android:id="@+id/rb_laundryStar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stars_5"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:rating="3.0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:stepSize="0.1"
+        android:theme="@style/review_color"
         app:layout_constraintBottom_toBottomOf="@id/tv_text3"
         app:layout_constraintStart_toEndOf="@+id/tv_text3"
         app:layout_constraintTop_toTopOf="@id/tv_text3" />
@@ -125,55 +147,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
+        android:fontFamily="@font/spoqa_han_sans_neo"
         android:text="@string/bottomTitle"
         android:textColor="#c4c4c4"
         android:textSize="12sp"
-        android:fontFamily="@font/spoqa_han_sans_neo"
         app:layout_constraintBottom_toBottomOf="@id/iv_reviewImg1"
         app:layout_constraintStart_toStartOf="@id/tv_title" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll_recommend"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:background="@drawable/recommend_frame"
-        android:padding="6dp"
         android:gravity="center"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         app:layout_constraintBottom_toBottomOf="@id/tv_bottomTitle"
-        app:layout_constraintEnd_toEndOf="@id/tv_cleanCount">
+        app:layout_constraintEnd_toEndOf="@id/tv_cleanCount"
+        app:layout_constraintStart_toEndOf="@id/tv_bottomTitle"
+        app:layout_constraintTop_toTopOf="@id/tv_bottomTitle">
 
         <ImageView
             android:id="@+id/iv_DdaBong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:src="@drawable/recommend_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:src="@drawable/recommend_button" />
 
         <TextView
             android:id="@+id/tv_recommendCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
             android:fontFamily="@font/spoqa_han_sans_neo"
-            android:layout_marginEnd="5dp"
-            android:text="1"
             android:textColor="@color/recommend_color"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
-            app:layout_constraintTop_toTopOf="@id/iv_DdaBong" />
-
-        <TextView
-            android:id="@+id/tv_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textColor="@color/recommend_color"
-            android:textSize="12sp"
-            android:fontFamily="@font/spoqa_han_sans_neo"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_recommendCount" />
+            tools:text="99+" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
