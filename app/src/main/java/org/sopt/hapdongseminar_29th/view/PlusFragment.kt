@@ -8,11 +8,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import org.sopt.hapdongseminar_29th.Product
 import org.sopt.hapdongseminar_29th.R
-import org.sopt.hapdongseminar_29th.ResponseCategoryData
+import org.sopt.hapdongseminar_29th.data.ResponseCategoryData
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment1
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment2
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment3
@@ -187,7 +185,7 @@ class PlusFragment : Fragment() {
         override fun run() {
             try {
                 while (true) {
-                    sleep(4000)
+                    sleep(5000)
                     pagerHandler.post {
                         var position = binding.vp2ProcessPage.currentItem
                         if (position == fragmentList.size - 1) {

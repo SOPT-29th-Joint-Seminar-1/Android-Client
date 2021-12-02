@@ -1,4 +1,4 @@
-package org.sopt.hapdongseminar_29th
+package org.sopt.hapdongseminar_29th.data
 
 data class ResponseCategoryData(
     val status: Int,

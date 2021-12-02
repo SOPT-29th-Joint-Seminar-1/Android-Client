@@ -1,6 +1,6 @@
 package org.sopt.hapdongseminar_29th.api
 
-import org.sopt.hapdongseminar_29th.ResponseCategoryData
+import org.sopt.hapdongseminar_29th.data.ResponseCategoryData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

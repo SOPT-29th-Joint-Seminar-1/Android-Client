@@ -13,7 +13,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfcc40c1-44d7-49d5-99c5-cdd40345e3eb" name="Default Changelist" comment="[FEAT] plus view price list api 연동 구현" />
+    <list default="true" id="cfcc40c1-44d7-49d5-99c5-cdd40345e3eb" name="Default Changelist" comment="[FEAT] plus view price list api 연동 구현">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/Product.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/ResponseCategoryData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/data/ResponseCategoryData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/PlusPriceListRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/PlusPriceListRVAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/ReviewAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/ReviewAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/api/CategoryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/api/CategoryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/view/PlusFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/view/PlusFragment.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +128,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="C:\Users\Hyeonji\Desktop\SOPT\Android-Client\app\src\main\res\font" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="org.sopt.hapdongseminar_29th.data" />
     </key>
     <key name="android.template.-1766320098">
       <recent name="org.sopt.hapdongseminar_29th" />

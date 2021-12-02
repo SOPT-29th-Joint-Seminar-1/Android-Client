@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.sopt.hapdongseminar_29th.adapter.EventAdapter
 import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
@@ -21,7 +23,11 @@ import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment2
 import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment3
 import org.sopt.hapdongseminar_29th.data.ResponseReviewGetData
 import org.sopt.hapdongseminar_29th.databinding.FragmentHomeBinding
+import org.sopt.hapdongseminar_29th.util.ReviewCreator
 import org.sopt.hapdongseminar_29th.view.PlusActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
     private var fragmentEventList = listOf<Fragment>()
@@ -30,6 +36,7 @@ class HomeFragment : Fragment() {
     private lateinit var thread: AutoSwipe
     private lateinit var eventAdapter: EventAdapter
     private lateinit var reviewAdapter: ReviewAdapter
+    private val imageList = listOf<ImageView>()
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -94,8 +101,9 @@ class HomeFragment : Fragment() {
         eventAdapter.fragments.addAll(fragmentEventList)
 
         reviewAdapter = ReviewAdapter()
-        reviewAdapter.reviewList = fragmentReviewList
-//        reviewAdapter.reviewList.addAll(fragmentReviewList)
+        binding.vpHome2.adapter = reviewAdapter
+
+        initReviewNetwork()
 
         val dotsIndicatorEvent = binding.dotsIndicatorEvent
         val vpHome1 = binding.vpHome1
@@ -109,11 +117,35 @@ class HomeFragment : Fragment() {
         dotsIndicatorReview.setViewPager2(vpHome2)
     }
 
+    private fun initReviewNetwork() {
+        val call: Call<ResponseReviewGetData> = ReviewCreator.reviewInterface.getReview()
+        call.enqueue(object : Callback<ResponseReviewGetData> {
+            override fun onResponse(
+                call: Call<ResponseReviewGetData>,
+                response: Response<ResponseReviewGetData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    if (data != null) {
+                        reviewAdapter.reviewList = data
+                        reviewAdapter.notifyDataSetChanged()
+                    }
+                } else {
+                    Toast.makeText(activity, "error", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseReviewGetData>, t: Throwable) {
+                Log.e("error", "$t")
+            }
+        })
+    }
+
     inner class AutoSwipe : Thread() {
         override fun run() {
             try {
                 while (true) {
-                    sleep(2000)
+                    sleep(5000)
                     pagerHandler.post {
                         var position = binding.vpHome1.currentItem
                         if (position == fragmentEventList.size - 1) {

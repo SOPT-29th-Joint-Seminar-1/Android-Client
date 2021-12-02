@@ -3,8 +3,7 @@ package org.sopt.hapdongseminar_29th.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.hapdongseminar_29th.Product
-import org.sopt.hapdongseminar_29th.ResponseCategoryData
+import org.sopt.hapdongseminar_29th.data.ResponseCategoryData
 import org.sopt.hapdongseminar_29th.databinding.ItemPlusPriceListBinding
 
 class PlusPriceListRVAdapter : RecyclerView.Adapter<PlusPriceListRVAdapter.PlusPriceListViewHolder>() {
