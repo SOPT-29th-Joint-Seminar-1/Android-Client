@@ -13,24 +13,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfcc40c1-44d7-49d5-99c5-cdd40345e3eb" name="Default Changelist" comment="[FEAT] plus view price list api 연동 구현">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/ResponseCategoryData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/api/CategoryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/api/ServiceCreator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-11-15__11_19__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-11-15_오후_11_19_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/PlusPriceListRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/adapter/PlusPriceListRVAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/view/PlusFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/sopt/hapdongseminar_29th/view/PlusFragment.kt" afterDir="false" />
-    </list>
+    <list default="true" id="cfcc40c1-44d7-49d5-99c5-cdd40345e3eb" name="Default Changelist" comment="[FEAT] plus view price list api 연동 구현" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/hun/.android/avd/Mdpi_Device_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/chan/.android/avd/Pixel_3a_API_31_arm64-v8a.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
