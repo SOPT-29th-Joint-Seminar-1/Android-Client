@@ -1,8 +1,11 @@
 package org.sopt.hapdongseminar_29th.adapter
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.sopt.hapdongseminar_29th.R
 import org.sopt.hapdongseminar_29th.data.ResponseReviewGetData
 import org.sopt.hapdongseminar_29th.databinding.ReviewItemBinding
@@ -16,6 +19,13 @@ class ReviewAdapter : RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
 
     class ReviewViewHolder(private val binding: ReviewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        private val imgList =
+            listOf(
+                R.drawable.img_review1,
+                R.drawable.img_review2,
+                R.drawable.img_review3
+            )
+
         fun onBind(data: ResponseReviewGetData.Data) {
             binding.tvTitle1.text = data.name
             binding.rbPickupStar1.rating = data.pickupStar.toFloat()
@@ -23,6 +33,13 @@ class ReviewAdapter : RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
             binding.rbLaundryStar1.rating = data.laundryStar.toFloat()
             binding.tvCleanCount1.text = "세특 ${data.usingcount}회차"
             binding.tvComment1.text = data.content
+
+            data.imgList = imgList
+            Glide.with(itemView)
+                .asDrawable()
+                .load(imgList[adapterPosition])
+                .error(R.drawable.best_icon_black)
+                .into(binding.ivReviewImg1)
 
             if (data.likecount > 99) {
                 binding.tvRecommendCount1.text = "99+"
@@ -42,7 +59,6 @@ class ReviewAdapter : RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
                 }
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {

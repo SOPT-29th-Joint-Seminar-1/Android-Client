@@ -17,10 +17,6 @@ import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
 import org.sopt.hapdongseminar_29th.Event.MainEvent1
 import org.sopt.hapdongseminar_29th.Event.MainEvent2
 import org.sopt.hapdongseminar_29th.Event.MainEvent3
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment1
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment2
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment3
 import org.sopt.hapdongseminar_29th.data.ResponseReviewGetData
 import org.sopt.hapdongseminar_29th.databinding.FragmentHomeBinding
 import org.sopt.hapdongseminar_29th.util.ReviewCreator
@@ -49,13 +45,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-
         initList()
         initAdapter()
         initRecyclerView()
 
-        val swipe = AutoSwipe()
-        swipe.start()
+        thread = AutoSwipe()
+        thread.start()
 
         binding.ivHomeComputer.clipToOutline = true //TODO : 이렇게하면 round corner되는지? 안되면 카드뷰
 
@@ -176,6 +171,4 @@ class HomeFragment : Fragment() {
         thread.interrupt()
         _binding = null
     }
-
-
 }

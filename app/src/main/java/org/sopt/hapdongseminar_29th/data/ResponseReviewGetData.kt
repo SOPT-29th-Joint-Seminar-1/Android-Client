@@ -1,5 +1,7 @@
 package org.sopt.hapdongseminar_29th.data
 
+import android.graphics.drawable.Drawable
+
 data class ResponseReviewGetData(
     val status: Int,
     val success: Boolean,
@@ -15,5 +17,6 @@ data class ResponseReviewGetData(
         val content: String,
         val image: String,
         val usingcount: Int,
+        var imgList : List<Int>
     )
 }
