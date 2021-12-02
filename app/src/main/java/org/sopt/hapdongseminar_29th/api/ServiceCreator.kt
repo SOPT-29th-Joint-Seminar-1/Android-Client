@@ -14,4 +14,6 @@ object ServiceCreator {
         .build()
 
     val categoryService : CategoryService = retrofit.create(CategoryService::class.java)
+    val mainVpService : MainViewpagerService=retrofit.create(MainViewpagerService::class.java)
+
 }

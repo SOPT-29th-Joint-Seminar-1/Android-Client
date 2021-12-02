@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import org.sopt.hapdongseminar_29th.R
-import org.sopt.hapdongseminar_29th.databinding.FragmentReview1Binding
-import org.sopt.hapdongseminar_29th.databinding.FragmentSmartFactory1Binding
 import org.sopt.hapdongseminar_29th.databinding.FragmentSmartFactory2Binding
 
 class SmartFactoryFragment2 : Fragment() {

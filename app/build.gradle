@@ -61,6 +61,7 @@ dependencies {
     // 서버 연결을 위한 Retrofit2
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
 
+
     // Retrofit2에서 gson 사용을 위한 컨버터
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
