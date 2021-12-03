@@ -9,29 +9,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.sopt.hapdongseminar_29th.adapter.EventAdapter
 import org.sopt.hapdongseminar_29th.adapter.ReviewAdapter
-import org.sopt.hapdongseminar_29th.Event.MainEvent1
-import org.sopt.hapdongseminar_29th.Event.MainEvent2
-import org.sopt.hapdongseminar_29th.Event.MainEvent3
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment1
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment2
-import org.sopt.hapdongseminar_29th.View_Review.ReviewFragment3
+import org.sopt.hapdongseminar_29th.api.ServiceCreator
+import org.sopt.hapdongseminar_29th.data.ResponseMainVpData
+import org.sopt.hapdongseminar_29th.data.ResponseReviewGetData
 import org.sopt.hapdongseminar_29th.databinding.FragmentHomeBinding
+import org.sopt.hapdongseminar_29th.util.ReviewCreator
 import org.sopt.hapdongseminar_29th.view.PlusActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
-    private var fragmentEventList = listOf<Fragment>()
-    private var fragmentReviewList = listOf<Fragment>()
+    private var fragmentReviewList = listOf<ResponseReviewGetData.Data>()
     private var pagerHandler = Handler(Looper.getMainLooper())
-
+    private lateinit var thread: AutoSwipe
     private lateinit var eventAdapter: EventAdapter
     private lateinit var reviewAdapter: ReviewAdapter
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: HomeEventRecyclerViewAdapter
 
     val eventList = mutableListOf<EventData>()
 
@@ -44,11 +44,12 @@ class HomeFragment : Fragment() {
         initList()
         initAdapter()
         initRecyclerView()
+        initEventNetwork()
 
-        val swipe = AutoSwipe()
-        swipe.start()
+        thread = AutoSwipe()
+        thread.start()
 
-        binding.ivHomeComputer.clipToOutline = true //TODO : 이렇게하면 round corner되는지? 안되면 카드뷰
+        binding.ivHomeComputer.clipToOutline = true
 
         binding.ivQuestion.setOnClickListener {
             val intent = Intent(requireContext(), PopupActivity::class.java)
@@ -61,6 +62,37 @@ class HomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun initEventNetwork() {
+        val call: Call<ResponseMainVpData> = ServiceCreator.mainVpService.getEventData("main")
+
+        call.enqueue(object : Callback<ResponseMainVpData> {
+            override fun onResponse(
+                call: Call<ResponseMainVpData>,
+                response: Response<ResponseMainVpData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    if (data != null) {
+                        eventAdapter.eventurlList.add(data.eventImage1)
+                        eventAdapter.eventurlList.add(data.eventImage2)
+                        eventAdapter.eventurlList.add(data.eventImage3)
+
+                        eventAdapter.notifyDataSetChanged()
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "이벤트 불러오기 실패", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseMainVpData>, t: Throwable) {
+                Toast.makeText(requireContext(), "서버 에러", Toast.LENGTH_LONG).show()
+                Log.e("NetworkTest", "error:$t")
+            }
+
+        })
+
     }
 
     private fun initRecyclerView() {
@@ -85,14 +117,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        fragmentEventList = listOf(MainEvent1(), MainEvent2(), MainEvent3())
-        fragmentReviewList = listOf(ReviewFragment1(), ReviewFragment2(), ReviewFragment3())
 
-        eventAdapter = EventAdapter(requireActivity())
-        eventAdapter.fragments.addAll(fragmentEventList)
+        eventAdapter = EventAdapter()
 
-        reviewAdapter = ReviewAdapter(requireActivity())
-        reviewAdapter.fragments.addAll(fragmentReviewList)
+        reviewAdapter = ReviewAdapter()
+        binding.vpHome2.adapter = reviewAdapter
+
+        initReviewNetwork()
 
         val dotsIndicatorEvent = binding.dotsIndicatorEvent
         val vpHome1 = binding.vpHome1
@@ -106,14 +137,38 @@ class HomeFragment : Fragment() {
         dotsIndicatorReview.setViewPager2(vpHome2)
     }
 
+    private fun initReviewNetwork() {
+        val call: Call<ResponseReviewGetData> = ReviewCreator.reviewInterface.getReview()
+        call.enqueue(object : Callback<ResponseReviewGetData> {
+            override fun onResponse(
+                call: Call<ResponseReviewGetData>,
+                response: Response<ResponseReviewGetData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    if (data != null) {
+                        reviewAdapter.reviewList = data
+                        reviewAdapter.notifyDataSetChanged()
+                    }
+                } else {
+                    Toast.makeText(activity, "error", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseReviewGetData>, t: Throwable) {
+                Log.e("error", "$t")
+            }
+        })
+    }
+
     inner class AutoSwipe : Thread() {
         override fun run() {
             try {
                 while (true) {
-                    sleep(2000)
+                    sleep(3000)
                     pagerHandler.post {
                         var position = binding.vpHome1.currentItem
-                        if (position == fragmentEventList.size - 1) {
+                        if (position == eventAdapter.eventurlList.size - 1) {
                             position = 0
                             binding.vpHome1.currentItem = position
                         } else {
@@ -124,7 +179,7 @@ class HomeFragment : Fragment() {
                         if (position2 == fragmentReviewList.size - 1) {
                             position2 = 0
                             binding.vpHome2.currentItem = position2
-                        }else{
+                        } else {
                             position2++
                             binding.vpHome2.currentItem = position
                         }
@@ -138,8 +193,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        thread.interrupt()
         _binding = null
     }
-
-
 }

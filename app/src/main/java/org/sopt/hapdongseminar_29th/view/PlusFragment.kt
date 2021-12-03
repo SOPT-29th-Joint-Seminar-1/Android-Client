@@ -9,15 +9,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.sopt.hapdongseminar_29th.Product
 import org.sopt.hapdongseminar_29th.R
+import org.sopt.hapdongseminar_29th.data.ResponseCategoryData
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment1
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment2
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment3
 import org.sopt.hapdongseminar_29th.View_Factory.SmartFactoryFragment4
 import org.sopt.hapdongseminar_29th.adapter.PlusPriceListRVAdapter
 import org.sopt.hapdongseminar_29th.adapter.SmartFactoryAdapter
+import org.sopt.hapdongseminar_29th.api.ServiceCreator
 import org.sopt.hapdongseminar_29th.databinding.FragmentPlusBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PlusFragment : Fragment() {
     private lateinit var smartFactoryAdapter: SmartFactoryAdapter
@@ -41,17 +45,20 @@ class PlusFragment : Fragment() {
     }
 
     private fun init() {
-        binding.etSearch.setOnFocusChangeListener { view, b ->
-            binding.ivSearchBtn.setImageResource(R.drawable.ic_plus_search_focused)
-        }
-
+        initSearch()
+        initAdapter()
         initBtn()
         initRV()
-        initAdapter()
         initProcessAdapter()
 
         thread = AutoSwipe()
         thread.start()
+    }
+
+    private fun initSearch() {
+        binding.etSearch.setOnFocusChangeListener { view, b ->
+            binding.ivSearchBtn.setImageResource(R.drawable.ic_plus_search_focused)
+        }
     }
 
     @SuppressLint("ResourceAsColor")
@@ -62,35 +69,7 @@ class PlusFragment : Fragment() {
 
     private fun initAdapter() {
         plusPriceListRVAdapter = PlusPriceListRVAdapter()
-        plusPriceListRVAdapter.priceList.addAll(
-            listOf(
-                Product("와이셔츠", 1800),
-                Product("교복셔츠", 1800),
-                Product("일반셔츠, 블라우스", 3000),
-                Product("티셔츠", 3000),
-                Product("맨투맨, 후드티", 4000),
-                Product("니트 스웨터, 가디건", 3500),
-                Product("바지, 스커트", 6000),
-                Product("원피스, 점프수트", 6000),
-                Product("스키/보드바지, 패딩바지", 10900),
-                Product("인조가죽 하의", 10900),
-                Product("정장자켓, 교복자켓", 4000),
-                Product("조끼", 2000),
-                Product("자켓, 점퍼", 6000),
-                Product("코트, 트렌치코트", 12000),
-                Product("대형러그", 30000),
-                Product("커튼", 15000),
-                Product("대형커튼", 30000),
-                Product("발매트", 3000),
-                Product("쇼파커버", 8000),
-                Product("애견쿠션", 25000),
-                Product("애견의류", 7000),
-                Product("무릎담요", 5000),
-                Product("인형", 7000),
-                Product("대형인형", 20000),
-                Product("앞치", 4000)
-            )
-        )
+        receiveAPI(0)
         binding.rvPriceList.adapter = plusPriceListRVAdapter
     }
 
@@ -131,6 +110,74 @@ class PlusFragment : Fragment() {
                 binding.ivCautionDown.setImageResource(R.drawable.ic_icon_down_red)
             }
         }
+
+        binding.rgFilterLabel.setOnCheckedChangeListener { radioGroup, i ->
+            binding.rvPriceList.smoothScrollToPosition(0)
+            when(i){
+                binding.rbAll.id -> {
+//                    Toast.makeText(context, "all",Toast.LENGTH_SHORT).show()
+                    receiveAPI(0)
+                }
+                binding.rbClothes.id -> {
+//                    Toast.makeText(context, "clothes",Toast.LENGTH_SHORT).show()
+                    receiveAPI(1)
+                }
+                binding.rbLiving.id -> {
+//                    Toast.makeText(context, "living",Toast.LENGTH_SHORT).show()
+                    receiveAPI(2)
+                }
+                binding.rbBedding.id -> {
+//                    Toast.makeText(context, "bedding",Toast.LENGTH_SHORT).show()
+                    receiveAPI(3)
+                }
+                binding.rbShoes.id -> {
+//                    Toast.makeText(context, "shoes",Toast.LENGTH_SHORT).show()
+                    receiveAPI(4)
+                }
+                binding.rbLeather.id -> {
+//                    Toast.makeText(context, "leather",Toast.LENGTH_SHORT).show()
+                    receiveAPI(5)
+                }
+                binding.rbRepair.id -> {
+//                    Toast.makeText(context, "repair",Toast.LENGTH_SHORT).show()
+                    receiveAPI(6)
+                }
+            }
+        }
+    }
+
+    private fun receiveAPI(index : Int) {
+        val call : Call<ResponseCategoryData>
+
+        if(index == 0){
+            call = ServiceCreator.categoryService.getCategoryList("")
+        } else {
+            call = ServiceCreator.categoryService.getCategoryList("$index")
+        }
+
+        call.enqueue(object : Callback<ResponseCategoryData> {
+            override fun onResponse(
+                call: Call<ResponseCategoryData>,
+                response: Response<ResponseCategoryData>,
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    if (data != null) {
+                        plusPriceListRVAdapter.priceList.clear()
+                        plusPriceListRVAdapter.priceList.addAll(
+                            data
+                        )
+                    }
+                    plusPriceListRVAdapter.notifyDataSetChanged()
+                } else {
+                    Log.d("test", "data null")
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseCategoryData>, t: Throwable) {
+                Log.e("NetworkTest", "error:$t")
+            }
+        })
     }
 
     // Viewpager2 auto position
@@ -138,7 +185,7 @@ class PlusFragment : Fragment() {
         override fun run() {
             try {
                 while (true) {
-                    sleep(2000)
+                    sleep(5000)
                     pagerHandler.post {
                         var position = binding.vp2ProcessPage.currentItem
                         if (position == fragmentList.size - 1) {

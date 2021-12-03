@@ -5,7 +5,6 @@ import android.os.Bundle
 import org.sopt.hapdongseminar_29th.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavigation() {
-
         supportFragmentManager.beginTransaction().replace(R.id.container_main, HomeFragment())
             .commitAllowingStateLoss()
 
